@@ -6,14 +6,12 @@ import Header from "@/components/Header";
 import { useEffect, useState } from "react";
 
 const Index = () => {
-  
-
   return (
     <div className="min-h-screen bg-background">
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-muted to-accent py-20">
+      <section className="bg-gradient-to-br from-background to-accent/30 py-20">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto">
             <img 
@@ -26,15 +24,15 @@ const Index = () => {
               <span className="text-primary block">Modern Agriculture</span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Specialized engineering services for chicken and pork farming operations. 
-              We design, optimize, and implement cutting-edge solutions for your agricultural success.
+              We're passionate about delivering top-notch engineering services to the poultry and swine industries. 
+              Our team of experts is committed to innovation and efficiency, helping our clients improve productivity and animal welfare.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8">
                 Start Your Project
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline" className="border-muted-foreground text-foreground hover:bg-accent">
+              <Button size="lg" variant="outline" className="border-primary/50 text-foreground hover:bg-accent">
                 View Our Work
               </Button>
             </div>
@@ -48,79 +46,79 @@ const Index = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-4">Our Engineering Services</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive engineering solutions tailored for poultry and pork farming operations
+              Comprehensive and sustainable solutions to the poultry and swine industries
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="bg-card hover:shadow-lg transition-shadow duration-300">
+            <Card className="bg-card border border-primary/10 hover:border-primary/30 hover:shadow-lg transition-all duration-300">
               <CardContent className="p-6">
-                <div className="bg-accent w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                <div className="bg-accent/50 w-12 h-12 rounded-full flex items-center justify-center mb-4">
                   <Building className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">Facility Design</h3>
+                <h3 className="text-xl font-semibold text-foreground mb-3">Design and Construction</h3>
                 <p className="text-muted-foreground">
-                  Custom barn and facility designs optimized for animal welfare, operational efficiency, and regulatory compliance.
+                  Specialized design and construction of poultry and swine farms optimized for animal welfare and operational efficiency.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-card hover:shadow-lg transition-shadow duration-300">
+            <Card className="bg-card border border-primary/10 hover:border-primary/30 hover:shadow-lg transition-all duration-300">
               <CardContent className="p-6">
-                <div className="bg-accent w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                <div className="bg-accent/50 w-12 h-12 rounded-full flex items-center justify-center mb-4">
                   <Wrench className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">System Integration</h3>
+                <h3 className="text-xl font-semibold text-foreground mb-3">Technical Services</h3>
                 <p className="text-muted-foreground">
-                  Advanced automation systems for feeding, climate control, waste management, and monitoring solutions.
+                  Technical services and consulting for poultry and swine operations, offering solutions for all your agricultural needs.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-card hover:shadow-lg transition-shadow duration-300">
+            <Card className="bg-card border border-primary/10 hover:border-primary/30 hover:shadow-lg transition-all duration-300">
               <CardContent className="p-6">
-                <div className="bg-accent w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                <div className="bg-accent/50 w-12 h-12 rounded-full flex items-center justify-center mb-4">
                   <CheckCircle className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">Compliance & Safety</h3>
+                <h3 className="text-xl font-semibold text-foreground mb-3">Engineering Systems</h3>
                 <p className="text-muted-foreground">
-                  Ensuring all designs meet industry standards, environmental regulations, and safety requirements.
+                  Engineering for feeding, hydration, lighting, heating and ventilation systems tailored to your specific requirements.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-card hover:shadow-lg transition-shadow duration-300">
+            <Card className="bg-card border border-primary/10 hover:border-primary/30 hover:shadow-lg transition-all duration-300">
               <CardContent className="p-6">
-                <div className="bg-accent w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                <div className="bg-accent/50 w-12 h-12 rounded-full flex items-center justify-center mb-4">
                   <Users className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">Project Management</h3>
+                <h3 className="text-xl font-semibold text-foreground mb-3">Energy Efficiency</h3>
                 <p className="text-muted-foreground">
-                  End-to-end project management from initial consultation to final implementation and maintenance.
+                  Energy efficiency analysis and process optimization to reduce costs and improve sustainability.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-card hover:shadow-lg transition-shadow duration-300">
+            <Card className="bg-card border border-primary/10 hover:border-primary/30 hover:shadow-lg transition-all duration-300">
               <CardContent className="p-6">
-                <div className="bg-accent w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                <div className="bg-accent/50 w-12 h-12 rounded-full flex items-center justify-center mb-4">
                   <Wrench className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">Equipment Optimization</h3>
+                <h3 className="text-xl font-semibold text-foreground mb-3">Control Systems</h3>
                 <p className="text-muted-foreground">
-                  Performance analysis and optimization of existing equipment to maximize efficiency and reduce costs.
+                  Design and implementation of control and monitoring systems for precise management of your operations.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="bg-card hover:shadow-lg transition-shadow duration-300">
+            <Card className="bg-card border border-primary/10 hover:border-primary/30 hover:shadow-lg transition-all duration-300">
               <CardContent className="p-6">
-                <div className="bg-accent w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                <div className="bg-accent/50 w-12 h-12 rounded-full flex items-center justify-center mb-4">
                   <Building className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">Retrofitting Solutions</h3>
+                <h3 className="text-xl font-semibold text-foreground mb-3">Maintenance Services</h3>
                 <p className="text-muted-foreground">
-                  Upgrading existing facilities with modern technology and improved systems for better performance.
+                  Maintenance of installations and equipment to ensure your operations run smoothly and efficiently.
                 </p>
               </CardContent>
             </Card>
@@ -129,7 +127,7 @@ const Index = () => {
       </section>
 
       {/* Portfolio Section */}
-      <section id="portfolio" className="py-20 bg-accent/30">
+      <section id="portfolio" className="py-20 bg-accent/10">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-4">Our Portfolio</h2>
@@ -140,7 +138,7 @@ const Index = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Portfolio Item 1 */}
-            <Card className="bg-card overflow-hidden hover:shadow-lg transition-all duration-300">
+            <Card className="bg-card border border-primary/10 overflow-hidden hover:border-primary/30 hover:shadow-lg transition-all duration-300">
               <div className="h-56 overflow-hidden">
                 <img 
                   src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81" 
@@ -161,7 +159,7 @@ const Index = () => {
             </Card>
 
             {/* Portfolio Item 2 */}
-            <Card className="bg-card overflow-hidden hover:shadow-lg transition-all duration-300">
+            <Card className="bg-card border border-primary/10 overflow-hidden hover:border-primary/30 hover:shadow-lg transition-all duration-300">
               <div className="h-56 overflow-hidden">
                 <img 
                   src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b" 
@@ -182,7 +180,7 @@ const Index = () => {
             </Card>
 
             {/* Portfolio Item 3 */}
-            <Card className="bg-card overflow-hidden hover:shadow-lg transition-all duration-300">
+            <Card className="bg-card border border-primary/10 overflow-hidden hover:border-primary/30 hover:shadow-lg transition-all duration-300">
               <div className="h-56 overflow-hidden">
                 <img 
                   src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" 
@@ -212,177 +210,78 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Company News Section */}
-      <section id="news" className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Company News</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Stay updated with our latest developments and industry insights
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* News Item 1 */}
-            <Card className="bg-card overflow-hidden hover:shadow-lg transition-all duration-300">
-              <div className="h-48 overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" 
-                  alt="Industry Conference" 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <CardContent className="p-6">
-                <div className="flex items-center text-muted-foreground mb-3">
-                  <Calendar className="h-4 w-4 mr-2" />
-                  <span className="text-sm">May 15, 2024</span>
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-2">
-                  PO&PISE Presents at Agricultural Innovation Summit
-                </h3>
-                <p className="text-muted-foreground mb-4">
-                  Our team showcased new ventilation technology for modern poultry barns at this year's summit.
-                </p>
-                <Button variant="ghost" className="text-primary hover:bg-accent px-4">
-                  Read More
-                  <ChevronRight className="ml-1 h-4 w-4" />
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* News Item 2 */}
-            <Card className="bg-card overflow-hidden hover:shadow-lg transition-all duration-300">
-              <div className="h-48 overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81" 
-                  alt="Team Expansion" 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <CardContent className="p-6">
-                <div className="flex items-center text-muted-foreground mb-3">
-                  <Calendar className="h-4 w-4 mr-2" />
-                  <span className="text-sm">April 28, 2024</span>
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-2">
-                  Welcoming New Agricultural Engineers to Our Team
-                </h3>
-                <p className="text-muted-foreground mb-4">
-                  PO&PISE expands with three new specialized engineers to meet growing client demand.
-                </p>
-                <Button variant="ghost" className="text-primary hover:bg-accent px-4">
-                  Read More
-                  <ChevronRight className="ml-1 h-4 w-4" />
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* News Item 3 */}
-            <Card className="bg-card overflow-hidden hover:shadow-lg transition-all duration-300">
-              <div className="h-48 overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6" 
-                  alt="New Technology" 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <CardContent className="p-6">
-                <div className="flex items-center text-muted-foreground mb-3">
-                  <Calendar className="h-4 w-4 mr-2" />
-                  <span className="text-sm">March 10, 2024</span>
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-2">
-                  Launching New Monitoring Software for Livestock Operations
-                </h3>
-                <p className="text-muted-foreground mb-4">
-                  Our proprietary software provides real-time insights into farm operations and animal welfare.
-                </p>
-                <Button variant="ghost" className="text-primary hover:bg-accent px-4">
-                  Read More
-                  <ChevronRight className="ml-1 h-4 w-4" />
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-          
-          <div className="text-center mt-12">
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              View All News
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-          </div>
-        </div>
-      </section>
-
       {/* About Section */}
-      <section id="about" className="py-20 bg-accent/30">
+      <section id="about" className="py-20 bg-accent/10">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-foreground mb-6">About Poultry & Pigs Services LLC</h2>
+              <h2 className="text-4xl font-bold text-foreground mb-6">Our Story</h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Founded in 2024, we are a specialized engineering firm dedicated to revolutionizing 
-                agricultural operations through innovative design and cutting-edge technology solutions.
+                At Poultry and Pig Services, we're passionate about delivering top-notch 
+                engineering services to the poultry and swine industries. Our team of experts is 
+                committed to innovation and efficiency, helping our clients improve productivity 
+                and animal welfare.
               </p>
+              <h3 className="text-2xl font-bold text-foreground mb-4">Our Mission</h3>
               <p className="text-muted-foreground mb-8">
-                Our team of experienced engineers understands the unique challenges facing modern 
-                poultry and pork farming operations. We combine technical expertise with practical 
-                agricultural knowledge to deliver solutions that improve efficiency, animal welfare, 
-                and profitability.
+                Provide comprehensive and sustainable solutions to the poultry and swine 
+                industries through cutting-edge technology, innovative design, and attention to detail. 
+                We strive to establish ourselves as trusted partners for our clients, delivering 
+                high-quality services that enhance their competitiveness and sustainability.
               </p>
               <div className="grid sm:grid-cols-2 gap-6">
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="h-6 w-6 text-primary mt-1" />
                   <div>
-                    <h4 className="font-semibold text-foreground">Expert Team</h4>
-                    <p className="text-muted-foreground">Licensed agricultural engineers</p>
+                    <h4 className="font-semibold text-foreground">Innovation</h4>
+                    <p className="text-muted-foreground">Researching and developing new technologies</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="h-6 w-6 text-primary mt-1" />
                   <div>
-                    <h4 className="font-semibold text-foreground">Proven Results</h4>
-                    <p className="text-muted-foreground">Successful project implementations</p>
+                    <h4 className="font-semibold text-foreground">Quality</h4>
+                    <p className="text-muted-foreground">Meeting the highest standards</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="h-6 w-6 text-primary mt-1" />
                   <div>
-                    <h4 className="font-semibold text-foreground">24/7 Support</h4>
-                    <p className="text-muted-foreground">Ongoing maintenance and support</p>
+                    <h4 className="font-semibold text-foreground">Sustainability</h4>
+                    <p className="text-muted-foreground">Minimizing environmental impact</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="h-6 w-6 text-primary mt-1" />
                   <div>
-                    <h4 className="font-semibold text-foreground">Custom Solutions</h4>
-                    <p className="text-muted-foreground">Tailored to your specific needs</p>
+                    <h4 className="font-semibold text-foreground">Collaboration</h4>
+                    <p className="text-muted-foreground">Creating effective solutions together</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="bg-card p-8 rounded-lg shadow-lg">
+            <div className="bg-card p-8 rounded-lg shadow-lg border border-primary/10">
               <h3 className="text-2xl font-bold text-foreground mb-6">Why Choose Us?</h3>
               <ul className="space-y-4">
                 <li className="flex items-start space-x-3">
                   <CheckCircle className="h-5 w-5 text-primary mt-0.5" />
+                  <span className="text-muted-foreground">Over 9 years of experience in the poultry and swine industry</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <CheckCircle className="h-5 w-5 text-primary mt-0.5" />
+                  <span className="text-muted-foreground">Team of skilled and committed professionals</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <CheckCircle className="h-5 w-5 text-primary mt-0.5" />
+                  <span className="text-muted-foreground">Cutting-edge technology and innovative solutions</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <CheckCircle className="h-5 w-5 text-primary mt-0.5" />
+                  <span className="text-muted-foreground">Focus on sustainability and animal welfare</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <CheckCircle className="h-5 w-5 text-primary mt-0.5" />
                   <span className="text-muted-foreground">Specialized expertise in agricultural engineering</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="h-5 w-5 text-primary mt-0.5" />
-                  <span className="text-muted-foreground">Focus on sustainable and efficient solutions</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="h-5 w-5 text-primary mt-0.5" />
-                  <span className="text-muted-foreground">Comprehensive project management approach</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="h-5 w-5 text-primary mt-0.5" />
-                  <span className="text-muted-foreground">Competitive pricing and flexible payment options</span>
-                </li>
-                <li className="flex items-start space-x-3">
-                  <CheckCircle className="h-5 w-5 text-primary mt-0.5" />
-                  <span className="text-muted-foreground">Long-term partnerships with ongoing support</span>
                 </li>
               </ul>
             </div>
@@ -394,9 +293,10 @@ const Index = () => {
       <section id="contact" className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Get Started Today</h2>
+            <h2 className="text-4xl font-bold text-foreground mb-4">Contact Us</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Ready to transform your agricultural operation? Contact us for a consultation and custom quote.
+              If you'd like to know more about how we can help you, please don't hesitate to contact us. 
+              We're looking forward to working with you!
             </p>
           </div>
           
@@ -405,60 +305,60 @@ const Index = () => {
               <h3 className="text-2xl font-bold text-foreground mb-6">Contact Information</h3>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="bg-accent p-3 rounded-lg">
+                  <div className="bg-accent/50 p-3 rounded-full">
                     <Phone className="h-6 w-6 text-primary" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">Phone</h4>
                     <p className="text-muted-foreground">Call us for immediate assistance</p>
-                    <p className="text-primary font-medium">(555) 123-4567</p>
+                    <p className="text-primary font-medium">+573207082015</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start space-x-4">
-                  <div className="bg-accent p-3 rounded-lg">
+                  <div className="bg-accent/50 p-3 rounded-full">
                     <Mail className="h-6 w-6 text-primary" />
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground">Email</h4>
                     <p className="text-muted-foreground">Send us your project details</p>
-                    <p className="text-primary font-medium">info@poultrypigs.com</p>
+                    <p className="text-primary font-medium">jqnlfnz@gmail.com</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start space-x-4">
-                  <div className="bg-accent p-3 rounded-lg">
+                  <div className="bg-accent/50 p-3 rounded-full">
                     <MapPin className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-foreground">Service Area</h4>
-                    <p className="text-muted-foreground">We serve agricultural operations nationwide</p>
-                    <p className="text-primary font-medium">Nationwide Service</p>
+                    <h4 className="font-semibold text-foreground">Website</h4>
+                    <p className="text-muted-foreground">Visit our website</p>
+                    <p className="text-primary font-medium">www.popise.com</p>
                   </div>
                 </div>
               </div>
             </div>
             
-            <div className="bg-accent/30 p-8 rounded-lg">
+            <div className="bg-card/80 p-8 rounded-lg border border-primary/10">
               <h3 className="text-2xl font-bold text-foreground mb-6">Request a Consultation</h3>
               <form className="space-y-4">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">First Name</label>
-                    <input type="text" className="w-full px-3 py-2 border border-border bg-card text-foreground rounded-md focus:outline-none focus:ring-2 focus:ring-primary" />
+                    <input type="text" className="w-full px-3 py-2 border border-border bg-background text-foreground rounded-md focus:outline-none focus:ring-2 focus:ring-primary" />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">Last Name</label>
-                    <input type="text" className="w-full px-3 py-2 border border-border bg-card text-foreground rounded-md focus:outline-none focus:ring-2 focus:ring-primary" />
+                    <input type="text" className="w-full px-3 py-2 border border-border bg-background text-foreground rounded-md focus:outline-none focus:ring-2 focus:ring-primary" />
                   </div>
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">Email</label>
-                  <input type="email" className="w-full px-3 py-2 border border-border bg-card text-foreground rounded-md focus:outline-none focus:ring-2 focus:ring-primary" />
+                  <input type="email" className="w-full px-3 py-2 border border-border bg-background text-foreground rounded-md focus:outline-none focus:ring-2 focus:ring-primary" />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">Farm Type</label>
-                  <select className="w-full px-3 py-2 border border-border bg-card text-foreground rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                  <select className="w-full px-3 py-2 border border-border bg-background text-foreground rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
                     <option>Select farm type</option>
                     <option>Poultry Farm</option>
                     <option>Pork Farm</option>
@@ -467,7 +367,7 @@ const Index = () => {
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">Project Description</label>
-                  <textarea rows={4} className="w-full px-3 py-2 border border-border bg-card text-foreground rounded-md focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Tell us about your project needs..."></textarea>
+                  <textarea rows={4} className="w-full px-3 py-2 border border-border bg-background text-foreground rounded-md focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Tell us about your project needs..."></textarea>
                 </div>
                 <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
                   Submit Request
@@ -479,7 +379,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-secondary text-secondary-foreground py-12">
+      <footer className="bg-card text-foreground py-12 border-t border-primary/20">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
@@ -490,38 +390,37 @@ const Index = () => {
                   className="h-12 w-12"
                 />
                 <div>
-                  <h3 className="text-lg font-bold">Poultry & Pigs Services LLC</h3>
-                  <p className="text-sm text-secondary-foreground/70">Est. 2024</p>
+                  <h3 className="text-lg font-bold">Poultry & Pigs Services</h3>
+                  <p className="text-sm text-muted-foreground">Engineering Excellence</p>
                 </div>
               </div>
-              <p className="text-secondary-foreground/70">
-                Engineering excellence for modern agricultural operations. 
-                Specialized solutions for chicken and pork farming.
+              <p className="text-muted-foreground">
+                We're passionate about delivering top-notch engineering services to the poultry and swine industries.
               </p>
             </div>
             
             <div>
               <h4 className="text-lg font-semibold mb-4">Services</h4>
-              <ul className="space-y-2 text-secondary-foreground/70">
-                <li>Facility Design</li>
-                <li>System Integration</li>
-                <li>Compliance & Safety</li>
-                <li>Project Management</li>
+              <ul className="space-y-2 text-muted-foreground">
+                <li>Design and construction of farms</li>
+                <li>Technical services and consulting</li>
+                <li>Engineering for feeding systems</li>
+                <li>Energy efficiency analysis</li>
               </ul>
             </div>
             
             <div>
-              <h4 className="text-lg font-semibold mb-4">Contact</h4>
-              <div className="space-y-2 text-secondary-foreground/70">
-                <p>Phone: (555) 123-4567</p>
-                <p>Email: info@poultrypigs.com</p>
-                <p>Service: Nationwide</p>
+              <h4 className="text-lg font-semibold mb-4">Follow Us</h4>
+              <div className="space-y-2 text-muted-foreground">
+                <p>Phone: +573207082015</p>
+                <p>Email: jqnlfnz@gmail.com</p>
+                <p>Website: www.popise.com</p>
               </div>
             </div>
           </div>
           
-          <div className="border-t border-secondary-foreground/20 mt-8 pt-8 text-center text-secondary-foreground/70">
-            <p>&copy; 2024 Poultry & Pigs Services LLC. All rights reserved.</p>
+          <div className="border-t border-primary/20 mt-8 pt-8 text-center text-muted-foreground">
+            <p>&copy; 2024 Poultry & Pigs Services. All rights reserved.</p>
           </div>
         </div>
       </footer>
