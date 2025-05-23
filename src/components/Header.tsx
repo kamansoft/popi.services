@@ -40,7 +40,7 @@ const Header = () => {
           <a href="#about" className="text-foreground hover:text-primary transition-colors">About</a>
           <a href="#contact" className="text-foreground hover:text-primary transition-colors">Contact</a>
         </nav>
-        <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
+        <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-6">
           Get Quote
         </Button>
       </div>
