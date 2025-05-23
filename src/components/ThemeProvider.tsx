@@ -1,4 +1,3 @@
-
 import { createContext, useContext, useEffect, useState } from "react";
 
 type Theme = "dark" | "light";
@@ -27,9 +26,54 @@ export function ThemeProvider({
   storageKey = "theme",
   ...props
 }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(
-    () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
-  );
+  // Check for user's browser preference if no stored theme is found
+  const getSystemTheme = (): Theme => {
+    if (typeof window !== "undefined" && window.matchMedia) {
+      return window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light";
+    }
+    return defaultTheme;
+  };
+
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window !== "undefined") {
+      const storedTheme = localStorage.getItem(storageKey) as Theme | null;
+      // If user has explicitly set a theme previously, use that
+      // Otherwise, detect from system preference
+      return storedTheme || getSystemTheme();
+    }
+    return defaultTheme;
+  });
+
+  // Listen for changes in system theme preference
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    
+    const handleChange = (e: MediaQueryListEvent) => {
+      // Only update if user hasn't manually set a theme preference
+      if (!localStorage.getItem(storageKey)) {
+        setTheme(e.matches ? "dark" : "light");
+      }
+    };
+    
+    // Some browsers use addEventListener, others use the older addListener
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener("change", handleChange);
+    } else if (mediaQuery.addListener) {
+      // @ts-ignore - older browsers
+      mediaQuery.addListener(handleChange);
+    }
+    
+    return () => {
+      if (mediaQuery.removeEventListener) {
+        mediaQuery.removeEventListener("change", handleChange);
+      } else if (mediaQuery.removeListener) {
+        // @ts-ignore - older browsers
+        mediaQuery.removeListener(handleChange);
+      }
+    };
+  }, [storageKey]);
 
   useEffect(() => {
     const root = window.document.documentElement;
