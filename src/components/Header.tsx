@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "./ThemeToggle";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -33,16 +34,19 @@ const Header = () => {
             <p className={`text-muted-foreground transition-all duration-300 ${scrolled ? 'text-xs' : 'text-sm'}`}>Engineering Excellence Since 2024</p>
           </div>
         </div>
-        <nav className="hidden md:flex space-x-6">
-          <a href="#services" className="text-foreground hover:text-primary transition-colors">Services</a>
-          <a href="#portfolio" className="text-foreground hover:text-primary transition-colors">Portfolio</a>
-          <a href="#news" className="text-foreground hover:text-primary transition-colors">News</a>
-          <a href="#about" className="text-foreground hover:text-primary transition-colors">About</a>
-          <a href="#contact" className="text-foreground hover:text-primary transition-colors">Contact</a>
-        </nav>
-        <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-6">
-          Get Quote
-        </Button>
+        <div className="flex items-center space-x-4">
+          <nav className="hidden md:flex space-x-6">
+            <a href="#services" className="text-foreground hover:text-primary transition-colors">Services</a>
+            <a href="#portfolio" className="text-foreground hover:text-primary transition-colors">Portfolio</a>
+            <a href="#news" className="text-foreground hover:text-primary transition-colors">News</a>
+            <a href="#about" className="text-foreground hover:text-primary transition-colors">About</a>
+            <a href="#contact" className="text-foreground hover:text-primary transition-colors">Contact</a>
+          </nav>
+          <ThemeToggle />
+          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-6">
+            Get Quote
+          </Button>
+        </div>
       </div>
     </header>
   );
