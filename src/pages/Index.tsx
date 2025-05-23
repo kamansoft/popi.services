@@ -1,8 +1,8 @@
-
 import { ArrowRight, Phone, Mail, MapPin, CheckCircle, Wrench, Building, Users, ChevronRight, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
+import Testimonials from "@/components/Testimonials";
 import { useEffect, useState } from "react";
 
 const Index = () => {
@@ -53,7 +53,7 @@ const Index = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="bg-card border border-primary/10 hover:border-primary/30 hover:shadow-lg transition-all duration-300">
               <CardContent className="p-6">
-                <div className="bg-accent/50 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                <div className="bg-primary/20 w-12 h-12 rounded-full flex items-center justify-center mb-4">
                   <Building className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="text-xl font-semibold text-foreground mb-3">Design and Construction</h3>
@@ -65,7 +65,7 @@ const Index = () => {
 
             <Card className="bg-card border border-primary/10 hover:border-primary/30 hover:shadow-lg transition-all duration-300">
               <CardContent className="p-6">
-                <div className="bg-accent/50 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                <div className="bg-primary/20 w-12 h-12 rounded-full flex items-center justify-center mb-4">
                   <Wrench className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="text-xl font-semibold text-foreground mb-3">Technical Services</h3>
@@ -77,7 +77,7 @@ const Index = () => {
 
             <Card className="bg-card border border-primary/10 hover:border-primary/30 hover:shadow-lg transition-all duration-300">
               <CardContent className="p-6">
-                <div className="bg-accent/50 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                <div className="bg-primary/20 w-12 h-12 rounded-full flex items-center justify-center mb-4">
                   <CheckCircle className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="text-xl font-semibold text-foreground mb-3">Engineering Systems</h3>
@@ -89,7 +89,7 @@ const Index = () => {
 
             <Card className="bg-card border border-primary/10 hover:border-primary/30 hover:shadow-lg transition-all duration-300">
               <CardContent className="p-6">
-                <div className="bg-accent/50 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                <div className="bg-primary/20 w-12 h-12 rounded-full flex items-center justify-center mb-4">
                   <Users className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="text-xl font-semibold text-foreground mb-3">Energy Efficiency</h3>
@@ -101,7 +101,7 @@ const Index = () => {
 
             <Card className="bg-card border border-primary/10 hover:border-primary/30 hover:shadow-lg transition-all duration-300">
               <CardContent className="p-6">
-                <div className="bg-accent/50 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                <div className="bg-primary/20 w-12 h-12 rounded-full flex items-center justify-center mb-4">
                   <Wrench className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="text-xl font-semibold text-foreground mb-3">Control Systems</h3>
@@ -113,7 +113,7 @@ const Index = () => {
 
             <Card className="bg-card border border-primary/10 hover:border-primary/30 hover:shadow-lg transition-all duration-300">
               <CardContent className="p-6">
-                <div className="bg-accent/50 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                <div className="bg-primary/20 w-12 h-12 rounded-full flex items-center justify-center mb-4">
                   <Building className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="text-xl font-semibold text-foreground mb-3">Maintenance Services</h3>
@@ -125,6 +125,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <Testimonials />
 
       {/* Portfolio Section */}
       <section id="portfolio" className="py-20 bg-accent/10">
@@ -204,6 +207,99 @@ const Index = () => {
           <div className="text-center mt-12">
             <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
               View All Projects
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Company News Section */}
+      <section id="news" className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground mb-4">Company News</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Stay updated with our latest projects and achievements
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="bg-card border border-primary/10 hover:border-primary/30 hover:shadow-lg transition-all duration-300">
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" 
+                  alt="New Industry Partnership" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <CardContent className="p-6">
+                <div className="flex items-center mb-3 text-muted-foreground">
+                  <Calendar className="h-4 w-4 mr-2" />
+                  <span className="text-sm">May 18, 2025</span>
+                </div>
+                <h3 className="text-xl font-semibold text-foreground mb-2">New Industry Partnership</h3>
+                <p className="text-muted-foreground mb-4">
+                  Poultry & Pigs Services announces strategic partnership with leading feed manufacturer to develop innovative feeding solutions.
+                </p>
+                <Button variant="outline" className="text-primary border-primary hover:bg-accent">
+                  Read More
+                  <ChevronRight className="ml-1 h-4 w-4" />
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card border border-primary/10 hover:border-primary/30 hover:shadow-lg transition-all duration-300">
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f" 
+                  alt="Technical Workshop Success" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <CardContent className="p-6">
+                <div className="flex items-center mb-3 text-muted-foreground">
+                  <Calendar className="h-4 w-4 mr-2" />
+                  <span className="text-sm">April 29, 2025</span>
+                </div>
+                <h3 className="text-xl font-semibold text-foreground mb-2">Technical Workshop Success</h3>
+                <p className="text-muted-foreground mb-4">
+                  Our recent workshop on energy efficiency in agricultural operations attracted over 200 industry professionals from 15 countries.
+                </p>
+                <Button variant="outline" className="text-primary border-primary hover:bg-accent">
+                  Read More
+                  <ChevronRight className="ml-1 h-4 w-4" />
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-card border border-primary/10 hover:border-primary/30 hover:shadow-lg transition-all duration-300">
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1531297484001-80022131f5a1" 
+                  alt="Award-Winning Design" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <CardContent className="p-6">
+                <div className="flex items-center mb-3 text-muted-foreground">
+                  <Calendar className="h-4 w-4 mr-2" />
+                  <span className="text-sm">March 15, 2025</span>
+                </div>
+                <h3 className="text-xl font-semibold text-foreground mb-2">Award-Winning Design</h3>
+                <p className="text-muted-foreground mb-4">
+                  Our innovative ventilation system for large-scale poultry operations receives industry award for sustainability and efficiency.
+                </p>
+                <Button variant="outline" className="text-primary border-primary hover:bg-accent">
+                  Read More
+                  <ChevronRight className="ml-1 h-4 w-4" />
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+          
+          <div className="text-center mt-12">
+            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
+              View All News
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
