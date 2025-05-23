@@ -2,53 +2,15 @@
 import { ArrowRight, Phone, Mail, MapPin, CheckCircle, Wrench, Building, Users, ChevronRight, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import Header from "@/components/Header";
 import { useEffect, useState } from "react";
 
 const Index = () => {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 20;
-      if (isScrolled !== scrolled) {
-        setScrolled(isScrolled);
-      }
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [scrolled]);
+  
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header - Fixed on scroll */}
-      <header className={`bg-card shadow-sm border-b sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'shadow-md' : ''}`}>
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="flex items-center space-x-3">
-            <img 
-              src="/lovable-uploads/beb88fc3-292f-41b6-9623-6c8272e1fd23.png" 
-              alt="Poultry & Pigs Services LLC" 
-              className="h-16 w-16"
-            />
-            <div>
-              <h1 className="text-xl font-bold text-foreground">Poultry & Pigs Services LLC</h1>
-              <p className="text-sm text-muted-foreground">Engineering Excellence Since 2024</p>
-            </div>
-          </div>
-          <nav className="hidden md:flex space-x-6">
-            <a href="#services" className="text-foreground hover:text-primary transition-colors">Services</a>
-            <a href="#portfolio" className="text-foreground hover:text-primary transition-colors">Portfolio</a>
-            <a href="#news" className="text-foreground hover:text-primary transition-colors">News</a>
-            <a href="#about" className="text-foreground hover:text-primary transition-colors">About</a>
-            <a href="#contact" className="text-foreground hover:text-primary transition-colors">Contact</a>
-          </nav>
-          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
-            Get Quote
-          </Button>
-        </div>
-      </header>
+      <Header />
 
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-muted to-accent py-20">
@@ -281,7 +243,7 @@ const Index = () => {
                 <p className="text-muted-foreground mb-4">
                   Our team showcased new ventilation technology for modern poultry barns at this year's summit.
                 </p>
-                <Button variant="ghost" className="text-primary hover:bg-accent p-0">
+                <Button variant="ghost" className="text-primary hover:bg-accent px-4">
                   Read More
                   <ChevronRight className="ml-1 h-4 w-4" />
                 </Button>
@@ -308,7 +270,7 @@ const Index = () => {
                 <p className="text-muted-foreground mb-4">
                   PO&PISE expands with three new specialized engineers to meet growing client demand.
                 </p>
-                <Button variant="ghost" className="text-primary hover:bg-accent p-0">
+                <Button variant="ghost" className="text-primary hover:bg-accent px-4">
                   Read More
                   <ChevronRight className="ml-1 h-4 w-4" />
                 </Button>
@@ -335,7 +297,7 @@ const Index = () => {
                 <p className="text-muted-foreground mb-4">
                   Our proprietary software provides real-time insights into farm operations and animal welfare.
                 </p>
-                <Button variant="ghost" className="text-primary hover:bg-accent p-0">
+                <Button variant="ghost" className="text-primary hover:bg-accent px-4">
                   Read More
                   <ChevronRight className="ml-1 h-4 w-4" />
                 </Button>
