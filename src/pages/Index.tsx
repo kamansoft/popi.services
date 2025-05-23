@@ -1,19 +1,36 @@
 
-import { ArrowRight, Phone, Mail, MapPin, CheckCircle, Wrench, Building, Users } from "lucide-react";
+import { ArrowRight, Phone, Mail, MapPin, CheckCircle, Wrench, Building, Users, ChevronRight, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { useEffect, useState } from "react";
 
 const Index = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 20;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrolled]);
+
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="bg-white shadow-sm border-b">
+      {/* Header - Fixed on scroll */}
+      <header className={`bg-white shadow-sm border-b sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'shadow-md' : ''}`}>
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-3">
             <img 
-              src="/lovable-uploads/268bf4e8-ced8-46de-939c-6dd855649a2c.png" 
+              src="/lovable-uploads/beb88fc3-292f-41b6-9623-6c8272e1fd23.png" 
               alt="Poultry & Pigs Services LLC" 
-              className="h-12 w-12"
+              className="h-16 w-16"
             />
             <div>
               <h1 className="text-xl font-bold text-gray-800">Poultry & Pigs Services LLC</h1>
@@ -22,6 +39,8 @@ const Index = () => {
           </div>
           <nav className="hidden md:flex space-x-6">
             <a href="#services" className="text-gray-700 hover:text-amber-600 transition-colors">Services</a>
+            <a href="#portfolio" className="text-gray-700 hover:text-amber-600 transition-colors">Portfolio</a>
+            <a href="#news" className="text-gray-700 hover:text-amber-600 transition-colors">News</a>
             <a href="#about" className="text-gray-700 hover:text-amber-600 transition-colors">About</a>
             <a href="#contact" className="text-gray-700 hover:text-amber-600 transition-colors">Contact</a>
           </nav>
@@ -36,9 +55,9 @@ const Index = () => {
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto">
             <img 
-              src="/lovable-uploads/268bf4e8-ced8-46de-939c-6dd855649a2c.png" 
+              src="/lovable-uploads/beb88fc3-292f-41b6-9623-6c8272e1fd23.png" 
               alt="Poultry & Pigs Services LLC" 
-              className="h-24 w-24 mx-auto mb-6"
+              className="h-32 w-32 mx-auto mb-6"
             />
             <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
               Engineering Excellence for
@@ -143,6 +162,192 @@ const Index = () => {
                 </p>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio Section */}
+      <section id="portfolio" className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">Our Portfolio</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Explore our innovative agricultural engineering projects
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Portfolio Item 1 */}
+            <Card className="overflow-hidden hover:shadow-lg transition-all duration-300">
+              <div className="h-56 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81" 
+                  alt="Modern Poultry Facility" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">Modern Poultry Facility</h3>
+                <p className="text-gray-600 mb-4">
+                  Complete design and implementation of a state-of-the-art poultry barn with automated climate control.
+                </p>
+                <Button variant="outline" className="text-amber-600 border-amber-600 hover:bg-amber-50">
+                  View Project
+                  <ChevronRight className="ml-1 h-4 w-4" />
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Portfolio Item 2 */}
+            <Card className="overflow-hidden hover:shadow-lg transition-all duration-300">
+              <div className="h-56 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b" 
+                  alt="Feed Management System" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">Feed Management System</h3>
+                <p className="text-gray-600 mb-4">
+                  Custom software integration for optimized feed distribution and inventory management.
+                </p>
+                <Button variant="outline" className="text-amber-600 border-amber-600 hover:bg-amber-50">
+                  View Project
+                  <ChevronRight className="ml-1 h-4 w-4" />
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Portfolio Item 3 */}
+            <Card className="overflow-hidden hover:shadow-lg transition-all duration-300">
+              <div className="h-56 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" 
+                  alt="Sustainable Pork Farm" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">Sustainable Pork Farm</h3>
+                <p className="text-gray-600 mb-4">
+                  Energy-efficient facility design with waste management solutions for environmental compliance.
+                </p>
+                <Button variant="outline" className="text-amber-600 border-amber-600 hover:bg-amber-50">
+                  View Project
+                  <ChevronRight className="ml-1 h-4 w-4" />
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+          
+          <div className="text-center mt-12">
+            <Button className="bg-amber-600 hover:bg-amber-700 text-white">
+              View All Projects
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Company News Section */}
+      <section id="news" className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">Company News</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Stay updated with our latest developments and industry insights
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* News Item 1 */}
+            <Card className="overflow-hidden hover:shadow-lg transition-all duration-300">
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" 
+                  alt="Industry Conference" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <CardContent className="p-6">
+                <div className="flex items-center text-gray-500 mb-3">
+                  <Calendar className="h-4 w-4 mr-2" />
+                  <span className="text-sm">May 15, 2024</span>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                  PO&PISE Presents at Agricultural Innovation Summit
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  Our team showcased new ventilation technology for modern poultry barns at this year's summit.
+                </p>
+                <Button variant="ghost" className="text-amber-600 hover:bg-amber-50 p-0">
+                  Read More
+                  <ChevronRight className="ml-1 h-4 w-4" />
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* News Item 2 */}
+            <Card className="overflow-hidden hover:shadow-lg transition-all duration-300">
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81" 
+                  alt="Team Expansion" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <CardContent className="p-6">
+                <div className="flex items-center text-gray-500 mb-3">
+                  <Calendar className="h-4 w-4 mr-2" />
+                  <span className="text-sm">April 28, 2024</span>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                  Welcoming New Agricultural Engineers to Our Team
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  PO&PISE expands with three new specialized engineers to meet growing client demand.
+                </p>
+                <Button variant="ghost" className="text-amber-600 hover:bg-amber-50 p-0">
+                  Read More
+                  <ChevronRight className="ml-1 h-4 w-4" />
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* News Item 3 */}
+            <Card className="overflow-hidden hover:shadow-lg transition-all duration-300">
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6" 
+                  alt="New Technology" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <CardContent className="p-6">
+                <div className="flex items-center text-gray-500 mb-3">
+                  <Calendar className="h-4 w-4 mr-2" />
+                  <span className="text-sm">March 10, 2024</span>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                  Launching New Monitoring Software for Livestock Operations
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  Our proprietary software provides real-time insights into farm operations and animal welfare.
+                </p>
+                <Button variant="ghost" className="text-amber-600 hover:bg-amber-50 p-0">
+                  Read More
+                  <ChevronRight className="ml-1 h-4 w-4" />
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+          
+          <div className="text-center mt-12">
+            <Button className="bg-amber-600 hover:bg-amber-700 text-white">
+              View All News
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
           </div>
         </div>
       </section>
@@ -318,9 +523,9 @@ const Index = () => {
             <div>
               <div className="flex items-center space-x-3 mb-4">
                 <img 
-                  src="/lovable-uploads/268bf4e8-ced8-46de-939c-6dd855649a2c.png" 
+                  src="/lovable-uploads/beb88fc3-292f-41b6-9623-6c8272e1fd23.png" 
                   alt="Poultry & Pigs Services LLC" 
-                  className="h-10 w-10"
+                  className="h-12 w-12"
                 />
                 <div>
                   <h3 className="text-lg font-bold">Poultry & Pigs Services LLC</h3>
