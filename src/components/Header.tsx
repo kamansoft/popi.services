@@ -14,7 +14,7 @@ const Header = () => {
       // This prevents flickering when hovering around the threshold
       if (!prevScrolled && scrollY > 25) {
         return true; // Switch to compact when scrolling down past 25px
-      } else if (prevScrolled && scrollY < 15) {
+      } else if (prevScrolled && scrollY < 2) {
         return false; // Switch to expanded when scrolling up past 15px
       }
       return prevScrolled; // Keep current state in the buffer zone (15-25px)
@@ -31,7 +31,7 @@ const Header = () => {
       
       timeoutId = window.setTimeout(() => {
         handleScroll();
-      }, 10); // Small delay to prevent excessive calls
+      }, 100); // Small delay to prevent excessive calls
     };
     
     window.addEventListener('scroll', throttledScrollHandler, { passive: true });
