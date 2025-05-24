@@ -81,11 +81,10 @@ const Header = () => {
             <img 
               src="/lovable-uploads/beb88fc3-292f-41b6-9623-6c8272e1fd23.png" 
               alt="Poultry & Pigs Services LLC" 
-              className={`transition-all duration-300 ${scrolled ? 'h-10 w-10' : 'h-12 w-12'} mb-1`}
+              className={`transition-all duration-300 ${scrolled ? 'h-8 w-8' : 'h-10 w-10'} mb-1`}
             />
             <div>
-              <h1 className={`font-bold text-foreground transition-all duration-300 ${scrolled ? 'text-sm' : 'text-base'}`}>Poultry & Pigs Services LLC</h1>
-              <p className={`text-muted-foreground transition-all duration-300 ${scrolled ? 'text-xs' : 'text-xs'}`}>Engineering Excellence Since 2024</p>
+              <h1 className={`font-bold text-foreground transition-all duration-300 ${scrolled ? 'text-xs' : 'text-sm'}`}>Poultry & Pigs Services LLC</h1>
             </div>
           </div>
         </div>
@@ -100,7 +99,7 @@ const Header = () => {
             <a href="#contact" className="text-foreground hover:text-primary transition-colors">Contact</a>
           </nav>
           <ThemeToggle />
-          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-6">
+          <Button className="hidden md:block bg-primary hover:bg-primary/90 text-primary-foreground px-6">
             Get Quote
           </Button>
         </div>
