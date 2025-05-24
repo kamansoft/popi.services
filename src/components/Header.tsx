@@ -1,24 +1,42 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "./ThemeToggle";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
 
+  const handleScroll = useCallback(() => {
+    const isScrolled = window.scrollY > 20;
+    setScrolled(prevScrolled => {
+      // Only update state if it actually changed
+      if (prevScrolled !== isScrolled) {
+        return isScrolled;
+      }
+      return prevScrolled;
+    });
+  }, []);
+
   useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 20;
-      if (isScrolled !== scrolled) {
-        setScrolled(isScrolled);
+    // Throttle scroll events to prevent excessive re-renders
+    let ticking = false;
+    
+    const throttledScrollHandler = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
       }
     };
     
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', throttledScrollHandler, { passive: true });
+    
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', throttledScrollHandler);
     };
-  }, [scrolled]);
+  }, [handleScroll]);
 
   return (
     <header className={`bg-card shadow-sm border-b border-primary/20 sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'shadow-md' : ''}`}>
