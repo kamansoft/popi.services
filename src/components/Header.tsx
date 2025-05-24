@@ -7,34 +7,40 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
 
   const handleScroll = useCallback(() => {
-    const isScrolled = window.scrollY > 20;
+    const scrollY = window.scrollY;
+    
     setScrolled(prevScrolled => {
-      // Only update state if it actually changed
-      if (prevScrolled !== isScrolled) {
-        return isScrolled;
+      // Use hysteresis: different thresholds for going up vs down
+      // This prevents flickering when hovering around the threshold
+      if (!prevScrolled && scrollY > 25) {
+        return true; // Switch to compact when scrolling down past 25px
+      } else if (prevScrolled && scrollY < 15) {
+        return false; // Switch to expanded when scrolling up past 15px
       }
-      return prevScrolled;
+      return prevScrolled; // Keep current state in the buffer zone (15-25px)
     });
   }, []);
 
   useEffect(() => {
-    // Throttle scroll events to prevent excessive re-renders
-    let ticking = false;
+    let timeoutId: number | null = null;
     
     const throttledScrollHandler = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          handleScroll();
-          ticking = false;
-        });
-        ticking = true;
+      if (timeoutId) {
+        clearTimeout(timeoutId);
       }
+      
+      timeoutId = window.setTimeout(() => {
+        handleScroll();
+      }, 10); // Small delay to prevent excessive calls
     };
     
     window.addEventListener('scroll', throttledScrollHandler, { passive: true });
     
     return () => {
       window.removeEventListener('scroll', throttledScrollHandler);
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
     };
   }, [handleScroll]);
 
