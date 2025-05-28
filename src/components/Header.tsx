@@ -9,17 +9,23 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleScroll = useCallback(() => {
+    // Calculate hero section height (assuming it's roughly the viewport height)
+    const heroHeight = window.innerHeight * 0.8; // 80% of viewport height
     const scrollY = window.scrollY;
     
+    // Shrink when hero section is 85% scrolled
+    const shrinkPoint = heroHeight * 0.85;
+    
     setScrolled(prevScrolled => {
-      // Use hysteresis: different thresholds for going up vs down
-      // This prevents flickering when hovering around the threshold
-      if (!prevScrolled && scrollY > 25) {
-        return true; // Switch to compact when scrolling down past 25px
-      } else if (prevScrolled && scrollY < 15) {
-        return false; // Switch to expanded when scrolling up past 15px
+      // Use hysteresis with calculated values
+      const expandPoint = shrinkPoint * 0.7; // Expand when scrolling back to 70% of shrink point
+      
+      if (!prevScrolled && scrollY > shrinkPoint) {
+        return true; // Shrink when hero is almost scrolled
+      } else if (prevScrolled && scrollY < expandPoint) {
+        return false; // Expand when scrolling back up
       }
-      return prevScrolled; // Keep current state in the buffer zone (15-25px)
+      return prevScrolled; // Keep current state in the buffer zone
     });
   }, []);
 
@@ -33,7 +39,7 @@ const Header = () => {
       
       timeoutId = window.setTimeout(() => {
         handleScroll();
-      }, 10); // Reduced delay for smoother response
+      }, 10);
     };
     
     window.addEventListener('scroll', debouncedScrollHandler, { passive: true });
